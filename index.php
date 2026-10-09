@@ -46,7 +46,7 @@ $nomor =1;
                     <a href="editSiswa.php?id=<?php echo $siswa ['id']?>" class="action-btn edit"style="text-decoration: none!important;">                               
                        <i class="fa fa-edit"></i>                       
                     </a>                                                
-                    <a href="hapusSiswa.php?id=<?php echo $siswa ['id']?>" class="action-btn delete" style="text-decoration: none!important;">                               
+                    <a href="hapusSiswa.php?id=<?php echo $siswa ['id']?>" class="action-btn delete" style="text-decoration: none!important;" onclick="return confirm('Apakah Anda yakin ingin menghapus data siswa ini?');">                            
                         <i class="fa fa-trash"></i>                     
                     </a>                                                
                 </td>                                                   

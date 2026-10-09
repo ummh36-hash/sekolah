@@ -19,7 +19,7 @@ if (isset($_POST ['submit'])){
     }                                                                                                           
 }                                                                                                               
 ?> 
-                                                                                                             
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,20 +36,20 @@ if (isset($_POST ['submit'])){
 	<form action="proses-simpan-siswa.php" method="POST" id="formTambahSiswa" autocomplete="off"> 
 
 		<label for="nis">Nis</label>                                                         
-		<input type="number" id="nis" name="nis" required> 
+		<input type="text" id="nis" name="nis" required> 
                                                  
 		<label for="nama">Nama</label>                                                          
 		<input type="text" id="nama" name="nama" required>                                      
 		
         <label for="kelas">Kelas</label>                                                        
-		<input type="number" id="kelas" name="kelas" required>                                    
+		<input type="text" id="kelas" name="kelas" required>                                    
 		
         <label for="jurusan">Jurusan</label>                                                              
 		<input type="text" id="jurusan" name="jurusan" required>           
 		
         <div class="form-actions">                                                                    
 			<button type="submit" name="submit" class="btn"><i class="fa fa-save"></i> Simpan</button>
-			<a href="#" class="back-link"><i class="fa fa-arrow-left"></i> Kembali</a>                
+			<a href="index.php" class="back-link"><i class="fa fa-arrow-left"></i> Kembali</a>                
 		</div>                                                                                        
 	</form>                                                                                           
 </div>                                                                                                
