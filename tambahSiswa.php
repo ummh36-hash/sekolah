@@ -1,3 +1,25 @@
+<?php                                                                                                           
+include_once('koneksi.php');                                                                                    
+                                                                                                                
+                                                                                                                
+if (isset($_POST ['submit'])){                                                                                  
+    $nis = $_POST ['nis'];                                                                                    
+    $nama = $_POST ['nama'];                                                                                      
+    $kelas = $_POST ['kelas'];                                                                                      
+    $jurusan = $_POST  ['jurusan'];                                                                             
+                                                                                                                
+                                                                                                                
+    $query = mysqli_query($db, "INSERT INTO siswa (nis, nama, kelas, jurusan) values ('$nis', '$nama', '$kelas', '$jurusan')");
+                                                                                                                
+                                                                                                                
+    if ($query){                                                                                                
+        header('location: index.php');                                                                        
+    } else {                                                                                                    
+        echo 'gagal menyimpan data';                                                                            
+    }                                                                                                           
+}                                                                                                               
+?> 
+                                                                                                             
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +36,16 @@
 	<form action="proses-simpan-siswa.php" method="POST" id="formTambahSiswa" autocomplete="off"> 
 
 		<label for="nis">Nis</label>                                                         
-		<input type="text" id="nis" name="nis" required> 
+		<input type="number" id="nis" name="nis" required> 
                                                  
 		<label for="nama">Nama</label>                                                          
 		<input type="text" id="nama" name="nama" required>                                      
 		
         <label for="kelas">Kelas</label>                                                        
-		<input type="text" id="kelas" name="kelas" required>                                    
+		<input type="number" id="kelas" name="kelas" required>                                    
 		
         <label for="jurusan">Jurusan</label>                                                              
-		<input type="text" id="jurusan" name="jurusan" min="1000" max="9999" required>           
+		<input type="text" id="jurusan" name="jurusan" required>           
 		
         <div class="form-actions">                                                                    
 			<button type="submit" name="submit" class="btn"><i class="fa fa-save"></i> Simpan</button>

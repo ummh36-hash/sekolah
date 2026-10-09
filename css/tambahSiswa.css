@@ -1,4 +1,4 @@
-/* Reset & Font Dasar */
+/* Reset Basic & Font */
 * {
     margin: 0;
     padding: 0;
@@ -7,100 +7,147 @@
 }
 
 body {
-    background-color: #f4f6f9;
+    background-color: #f4f7f6;
     color: #333;
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
+    padding: 20px;
 }
 
-/* Container Form */
+/* Card Container */
 .container {
+    background-color: #ffffff;
     width: 100%;
     max-width: 500px;
-    background: #ffffff;
-    padding: 30px;
+    padding: 30px 35px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Judul Form */
-h2 {
-    color: #2c3e50;
-    margin-bottom: 24px;
+.container h2 {
     font-size: 22px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
     border-bottom: 2px solid #eef2f5;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
-/* Label Input */
+/* Label & Input Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 label {
-    display: block;
     font-size: 14px;
     font-weight: 600;
     color: #4a5568;
     margin-bottom: 6px;
+    margin-top: 14px;
 }
 
-/* Input Fields */
-input[type="text"] {
+label:first-of-type {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="number"] {
     width: 100%;
     padding: 10px 14px;
-    margin-bottom: 18px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
     font-size: 14px;
-    color: #333;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input[type="text"]:focus {
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
     outline: none;
-    border-color: #6c5ce7;
-    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+    transition: all 0.2s ease;
+    background-color: #f8fafc;
 }
 
-/* Container Tombol */
+/* Hilangkan Spinner Panah Pada Input Type Number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Focus State untuk Input */
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #27ae60;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.15);
+}
+
+/* Form Actions (Tombol Simpan & Kembali) */
 .form-actions {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
     gap: 12px;
-    margin-top: 10px;
 }
 
 /* Tombol Simpan */
-button.btn {
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
+.btn {
+    background-color: #27ae60;
+    color: #ffffff;
     padding: 10px 20px;
+    border: none;
     border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
 }
 
-button.btn:hover {
-    background-color: #5b4bc4;
+.btn:hover {
+    background-color: #219653;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
+    transform: translateY(-1px);
 }
 
 /* Link Kembali */
-a.back-link {
-    display: inline-block;
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: #64748b;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    padding: 10px 16px;
+    padding: 10px 14px;
     border-radius: 6px;
-    border: 1px solid #cbd5e1;
     transition: all 0.2s ease;
 }
 
-a.back-link:hover {
+.back-link:hover {
     background-color: #f1f5f9;
     color: #334155;
+}
+
+/* Responsive Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .btn, .back-link {
+        width: 100%;
+        justify-content: center;
+    }
 }

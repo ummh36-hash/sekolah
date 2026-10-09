@@ -2,7 +2,7 @@
                                                                                                                                             
 include_once 'koneksi.php';                                                                                                                 
                                                                          
-$query = mysqli_query ($konek, "SELECT * FROM siswa");                       
+$query = mysqli_query ($db, "SELECT * FROM siswa");                       
 $nomor =1;                                                               
                                                                          
                                                                          
@@ -22,7 +22,7 @@ $nomor =1;
 
 <div class="container" style="position:relative;z-index:1;">            
     <h1>Daftar Nama Siswa</h1>                                       
-                                                             
+    <a href="tambahSiswa.php" class="add-btn"><i class="fa fa-plus"></i> Tambah Siswa</a>                                                       
     <table>                                                             
         <thead>                                                         
             <tr>                                                        
@@ -35,18 +35,18 @@ $nomor =1;
             </tr>                                                       
         </thead>                                                        
         <tbody id="SiswaTableBody">                                      
-            <?php foreach ($query as $index){ ?>                         
+            <?php foreach ($query as $siswa){ ?>                         
             <tr>                                                        
                 <td> <?php echo $nomor++ ?> </td>                       
-                <td> <?php echo $index ['nis'] ?> </td>                
-                <td> <?php echo $index ['nama'] ?></td>               
-                <td> <?php echo $index ['kelas'] ?> </td>             
-                <td> <?php echo $index ['jurusan'] ?> </td>         
+                <td> <?php echo $siswa ['nis'] ?> </td>                
+                <td> <?php echo $siswa ['nama'] ?></td>               
+                <td> <?php echo $siswa ['kelas'] ?> </td>             
+                <td> <?php echo $siswa ['jurusan'] ?> </td>         
                 <td>                                                    
-                    <a href="#" class="action-btn edit"style="text-decoration: none!important;">                               
+                    <a href="editSiswa.php?id=<?php echo $siswa ['id']?>" class="action-btn edit"style="text-decoration: none!important;">                               
                        <i class="fa fa-edit"></i>                       
                     </a>                                                
-                    <a href="#" class="action-btn delete" style="text-decoration: none!important;">                               
+                    <a href="hapusSiswa.php?id=<?php echo $siswa ['id']?>" class="action-btn delete" style="text-decoration: none!important;">                               
                         <i class="fa fa-trash"></i>                     
                     </a>                                                
                 </td>                                                   
@@ -56,7 +56,6 @@ $nomor =1;
 
       </table> <br> 
 
-      <a href="tambahSiswa.php" class="btn-tambah"><i class="fa fa-plus"></i>  Tambah Siswa</a>
  </div>    
  
  

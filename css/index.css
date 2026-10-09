@@ -1,4 +1,4 @@
-/* Reset & Font Dasar */
+/* Reset Basic & Font */
 * {
     margin: 0;
     padding: 0;
@@ -7,103 +7,99 @@
 }
 
 body {
-    background-color: #f4f6f9;
+    background-color: #f4f7f6;
     color: #333;
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Container Wrapper */
 .container {
+    background-color: #ffffff;
     width: 100%;
-    max-width: 800px;
-    background: #ffffff;
+    max-width: 950px;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Judul Utama */
-h1, h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
+.container h1 {
     font-size: 24px;
-    border-bottom: 2px solid #eef2f5;
-    padding-bottom: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
-/* Tombol / Link Tambah Buku */
-a.btn-tambah, .container > a {
-    display: inline-block;
-    background-color: #6c5ce7;
-    color: white;
-    padding: 10px 18px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 20px;
-    transition: background-color 0.2s ease;
-}
-
-a.btn-tambah:hover, .container > a:hover {
-    background-color: #5b4bc4;
-}
-
-/* Style Tabel Modern */
+/* Styling Tabel */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
 }
 
-th, td {
-    padding: 12px 16px;
+table thead tr {
+    background-color: #2c3e50;
+    color: #ffffff;
     text-align: left;
-}
-
-th {
-    background-color: #eef2f7;
-    color: #4a5568;
     font-weight: 600;
-    font-size: 14px;
-    border-bottom: 2px solid #e2e8f0;
 }
 
-td {
-    border-bottom: 1px solid #edf2f7;
-    font-size: 14px;
-    color: #4a5568;
+table th, table td {
+    padding: 14px 18px;
 }
 
-/* Efek Hover pada Baris Tabel */
-tr:hover td {
-    background-color: #f8fafc;
+table tbody tr {
+    border-bottom: 1px solid #eef2f5;
+    transition: background-color 0.2s ease;
 }
 
-/* Zebra Striping (Baris Selang-Seling) */
-tr:nth-child(even) td {
-    background-color: #fafbfc;
+/* Warna Selang-Seling Baris (Zebra Striping) */
+table tbody tr:nth-of-type(even) {
+    background-color: #fcfcfc;
 }
 
-/* Style Tambahan untuk Tombol Aksi */
+table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Penyesuaian Kolom */
+table th:first-child, table td:first-child {
+    text-align: center;
+    width: 60px;
+}
+
+table th:last-child, table td:last-child {
+    text-align: center;
+    width: 120px;
+}
+
+/* Tombol Aksi (Edit & Delete) */
 .action-btn {
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 4px;
-    color: white !important;
-    font-size: 13px;
-    margin-right: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    color: #fff !important;
+    font-size: 14px;
+    margin: 0 3px;
+    transition: all 0.2s ease;
 }
 
 .action-btn.edit {
-    background-color: #f1c40f;
+    background-color: #f39c12;
 }
 
 .action-btn.edit:hover {
-    background-color: #d4ac0d;
+    background-color: #d68910;
+    transform: translateY(-2px);
 }
 
 .action-btn.delete {
@@ -112,4 +108,39 @@ tr:nth-child(even) td {
 
 .action-btn.delete:hover {
     background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Tombol Tambah Siswa */
+.add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: #219653;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Responsive Tampilan Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
